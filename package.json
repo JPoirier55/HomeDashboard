@@ -1,0 +1,18 @@
+{
+  "name": "home_dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard to give me the daily updates on life as well as control my desktop lighting.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "consolidate": "^0.14.0",
+    "express": "^4.13.4",
+    "html": "0.0.10",
+    "swig": "^1.4.2"
+  }
+}
