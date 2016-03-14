@@ -1,3 +1,11 @@
+/*
+    Idea and dev Credit goes to NICK
+    Followed closely from:
+        https://github.com/konecnyna/RpiInfoKiosk/blob/master/weather.js
+
+ */
+
+
 var http = require('http');
 var https = require('https');
 
@@ -8,9 +16,10 @@ module.exports = {
 };
 
 function getForecastIOWeather(callback){
-	var forecast = 'https://api.forecast.io/forecast/ab4397914a446e55d16d43db59026d56/40.733860,-74.004998';
+	var forecast = 'https://api.forecast.io/forecast/b6e62e7b104f9af8d9ff66f98ec92500/40.5592,-105.0781';
 	downloadFileSSL(forecast, function(jsonStr){
-		callback(JSON.parse(jsonStr));
+		//console.log(jsonStr);
+		callback(parseWeatherJson(jsonStr));
 	});
 }
 
@@ -27,4 +36,14 @@ function downloadFileSSL(url, callback){
         console.log("Got error: ", e);
         callback("");
     });
+}
+
+function parseWeatherJson(weatherJson, callback){
+    var jsonDoc = JSON.parse(weatherJson);
+    var currently = jsonDoc.currently;
+    var daily = jsonDoc.daily;
+    var alerts = jsonDoc.alerts;
+    console.log(currently);
+    console.log(daily);
+    console.log(alerts[0]);
 }

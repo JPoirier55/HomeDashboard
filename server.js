@@ -1,6 +1,6 @@
 var express = require('express');
 var cons = require('consolidate');
-var weather = require('./othertest.js');
+var weather = require('./weather.js');
 var app = express();
 
 app.engine('html', cons.swig);
@@ -15,10 +15,11 @@ app.get('/abcd', function(req, res) {
    res.render('test.html');
 })
 
-app.get('/api/v1/weather', function(req, res) {
+app.get('/api/v1/w', function(req, res) {
  weather.getForecastIOWeather(function(callback){
       res.json(callback);
    });
 });
+app.use(express.static(__dirname + '/views'));
 app.listen(8080);
 
