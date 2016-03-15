@@ -1,5 +1,47 @@
-<div id="weatherDiv"  ng-controller="weatherController">
 
-    {{data}}
-
+<div class="col-md-6">
+    <div class="card" style="padding-bottom: 10px;">
+        <div class="header">
+            <h4 class="title">Weather</h4>
+            <div id="card-content"  ng-controller="weatherController">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p class="category">Summary</p>
+                    <div>Current Temperature: {{currently.temperature}}°</div>
+                    <div>  Windspeed: {{currently.windSpeed}} MPH</div>
+                    <div>
+                        Alerts:
+                        {{alerts[0].title}}
+                        <br>
+                        <a href="{{alerts[0].uri}}">Click to see full weather.gov Alert</a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <p class="category">Weekly Forecast</p>
+                        <table id="tempTable">
+                            <tr>
+                                <td></td>
+                                <td>High</td>
+                                <td>Low</td>
+                                <td>Conditions</td>
+                            </tr>
+                            <tr ng-repeat="day in daily">
+                                <td>{{ day.dayname }}</td>
+                                <td style="color:red;">{{day.temperatureMax}}°</td>
+                                <td style="color:blue;">{{day.temperatureMin}}°</td>
+                                <td style="color:blue;">{{day.icon}}</td>
+                            </tr>
+                        </table>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+

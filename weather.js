@@ -11,15 +11,14 @@ var https = require('https');
 
 module.exports = {
   getForecastIOWeather: function (callback) {
-    getForecastIOWeather(callback);
+      getForecastIOWeather(callback);
   }
 };
 
 function getForecastIOWeather(callback){
 	var forecast = 'https://api.forecast.io/forecast/b6e62e7b104f9af8d9ff66f98ec92500/40.5592,-105.0781';
 	downloadFileSSL(forecast, function(jsonStr){
-		//console.log(jsonStr);
-		callback(parseWeatherJson(jsonStr));
+		callback(JSON.parse(jsonStr));
 	});
 }
 
@@ -38,12 +37,4 @@ function downloadFileSSL(url, callback){
     });
 }
 
-function parseWeatherJson(weatherJson, callback){
-    var jsonDoc = JSON.parse(weatherJson);
-    var currently = jsonDoc.currently;
-    var daily = jsonDoc.daily;
-    var alerts = jsonDoc.alerts;
-    console.log(currently);
-    console.log(daily);
-    console.log(alerts[0]);
-}
+

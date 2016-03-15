@@ -1,59 +1,35 @@
-
-* { box-sizing: border-box; }
-
-body {
-    font-family: monospace;
-    background: #272822;
+.ufcImages{
+    margin: 10px;
+    border: 2px solid black;
 }
 
-.grid {
-    background: #474444;
+#tempTable{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
 }
-.grid:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.grid-sizer,
-.grid-item {
-    width: 24%;
-}
-.grid-item {
-    height: 120px;
-    float: left;
-    background: #02ff14;
-    border: 1px solid #767676;
-    box-shadow: 5px 5px 3px #272822;
-    /*border-color: hsla(0, 0%, 0%, 0.5);*/
-    margin-bottom: 1%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+#textBox{
+    width: 100%;
+    height: 150px;
 }
 
-.grid-item--width2 { 
-    width:  24%;
-    background: #ff5123;
-}
-.grid-item--width3 { 
-    width:  48.5%;
-    background: #c1ff54;
-}
 
-.grid-item--height2 { 
-    height: 200px;
-    background: #3effb5;
-}
-.grid-item--height3 { 
-    height: 260px;
-    background: #429aff;    
-}
-.grid-item--height4 { 
-    height: 360px;
-    background: #c113ff;
-}
-#weatherDiv{
-    background: white;
-    margin: 2%;
+.holdingcolors{
+    /* green with light green inner*/
+    background: #1AA69B;
+    color: #98D4D2;
+    color: #026C60;
+    /* background between tiles */
+    color: #F4F7FE;
+    /* pink with light pink inner */
+    background: #EF3B7A;
+    color: #F89DBC;
+    /* button or spinner colors */
+    color: #18B5F8;
+    background: #57BB59;
+    color: #6167D9;
+    color: #F4593D;
+    /* tile colors */
+    color: #FFFFFF;
 }

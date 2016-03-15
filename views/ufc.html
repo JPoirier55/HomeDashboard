@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
@@ -11,8 +12,6 @@
     <script src="DashboardApp.js"></script>
     <script src="static/controllers/weatherController.js"></script>
     <script src="static/controllers/ufcController.js"></script>
-    <script src="static/controllers/quoteController.js"></script>
-    <script src="static/controllers/notesController.js"></script>
 
 </head>
 <body>
@@ -28,7 +27,7 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="/">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
@@ -47,9 +46,28 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div ng-include="'weather.html'"></div>
-                    <div ng-include="'quotes.html'"></div>
-                    <div ng-include="'notes.html'"></div>
+                    <div class="col-md-8">
+                        <div class="card" style="padding-bottom: 10px;">
+                            <div class="header">
+                                <h4 class="title">UFC Lineup</h4>
+                                <div id="card-content"  ng-controller="ufcController">
+                                    <ul class="list-group list-group-flush" >
+                                        <li class="list-group-item" ng-repeat="fight in fights">
+                                            <p class="category">{{fight.title_tag_line}}</p>
+                                            <ul>
+                                                <li>Date: {{fight.event_date}}</li>
+                                                <li>Time: {{fight.event_time_text}}{{fight.event_time_zone_text}}</li>
+                                                <li>Location: {{fight.arena}}{{fight.location}}</li>
+                                                <li>Description: {{fight.short_description}}</li>
+                                                <li  style="list-style-type: none;"><img class="ufcImages" src="{{fight.feature_image}}" height="150"></li>
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -58,4 +76,8 @@
 
 </body>
 </html>
+
+
+
+
 
