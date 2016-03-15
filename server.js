@@ -4,6 +4,7 @@ var weather = require('./weather.js');
 var ufc = require('./ufc.js');
 var quotes = require('./quotes.js');
 var notes = require('./notes.js');
+var pinterest = require('./pinterest.js');
 var app = express();
 
 app.engine('html', cons.swig);
@@ -41,7 +42,11 @@ app.get('/request', function(req, res){
     notes.writeNote();
     res.json();
 });
-
+app.get('/api/v1/pins', function(req, res) {
+    pinterest.getPins(function(callback){
+        res.json(callback);
+    });
+});
 
 app.use(express.static(__dirname + '/views'));
 app.listen(8080);
