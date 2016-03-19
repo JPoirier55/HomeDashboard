@@ -1,21 +1,13 @@
 <div class="col-md-6">
     <div class="card ">
         <div class="header">
-            <h4 class="title">Notepad</h4>
+            <h4 class="title">NOTEPAD</h4>
         </div>
-
-        <div class="content">
-            <section>
+        <ul class="list-group list-group-flush" >
+            <li class="list-group-item">
                 <textarea id="textBox" resize="none"></textarea>
-                <input type="button" id="textBoxButton" value="Submit">
-                    <script>
-                    $('#textBoxButton').click(function () {
-                        $.post('/request', {"data": 'balsbaas'}, function (data) {
-                            console.log(data);
-                        });
-                    });
-                </script>
-            </section>
-        </div>
+                <input class="btn btn-primary" type="button" id="textBoxButton" value="Submit">
+            </li>
+        </ul>
     </div>
 </div>

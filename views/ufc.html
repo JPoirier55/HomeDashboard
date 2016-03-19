@@ -1,83 +1,27 @@
 
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-    <link href="static/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/angular.min.js"></script>
+<div class="col-md-8">
+    <div class="card" style="padding-bottom: 10px;">
+        <div class="header">
+            <h4 class="title">UFC LINEUP</h4>
+            <div id="card-content"  ng-controller="ufcController">
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item" ng-repeat="fight in fights">
+                        <p style="font-size:1.2vw; color:#EA4E53;" class="category">{{fight.title_tag_line}}</p>
+                        <ul>
+                            <li>Date: {{fight.event_date}}</li>
+                            <li>Time: {{fight.event_time_text}}{{fight.event_time_zone_text}}</li>
+                            <li>Location: {{fight.arena}}{{fight.location}}</li>
+                            <li>Description: {{fight.short_description}}</li>
+                            <li  style="list-style-type: none;"><img class="ufcImages" src="{{fight.feature_image}}" height="150"></li>
+                        </ul>
 
-    <script src="DashboardApp.js"></script>
-    <script src="static/controllers/weatherController.js"></script>
-    <script src="static/controllers/ufcController.js"></script>
+                    </li>
 
-</head>
-<body>
-
-<div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="assets/img/sidebar-5.jpg">
-        <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="" class="simple-text">
-                    Apartment Livin
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li class="active">
-                    <a href="/">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="ufc.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>UFC</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-panel">
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card" style="padding-bottom: 10px;">
-                            <div class="header">
-                                <h4 class="title">UFC Lineup</h4>
-                                <div id="card-content"  ng-controller="ufcController">
-                                    <ul class="list-group list-group-flush" >
-                                        <li class="list-group-item" ng-repeat="fight in fights">
-                                            <p class="category">{{fight.title_tag_line}}</p>
-                                            <ul>
-                                                <li>Date: {{fight.event_date}}</li>
-                                                <li>Time: {{fight.event_time_text}}{{fight.event_time_zone_text}}</li>
-                                                <li>Location: {{fight.arena}}{{fight.location}}</li>
-                                                <li>Description: {{fight.short_description}}</li>
-                                                <li  style="list-style-type: none;"><img class="ufcImages" src="{{fight.feature_image}}" height="150"></li>
-                                            </ul>
-
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
-</body>
-</html>
-
-
 
 
 

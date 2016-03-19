@@ -1,15 +1,14 @@
 
 <div class="col-md-6">
-    <div class="card" style="padding-bottom: 10px;">
+    <div class="card" >
         <div class="header">
-            <h4 class="title">Weather</h4>
-            <div id="card-content"  ng-controller="weatherController">
-            <ul class="list-group list-group-flush">
+            <h4 class="title">WEATHER</h4>
+            <div ng-controller="weatherController">
+                <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <p class="category">Summary</p>
-                    <div>Current Temperature: {{currently.temperature}}°</div>
-                    <div>  Windspeed: {{currently.windSpeed}} MPH</div>
-                    <div>
+                    <div class="tempwindalerts">Current Temperature: <p style="font-size: 3vw; color:#CC7832;" >{{currently.temperature}}°</p></div>
+                    <div class="tempwindalerts">Windspeed: {{currently.windSpeed}} MPH</div>
+                    <div class="tempwindalerts">
                         Alerts:
                         {{alerts[0].title}}
                         <br>
@@ -17,21 +16,20 @@
                     </div>
                 </li>
                 <li class="list-group-item">
-                    <p class="category">Weekly Forecast</p>
-                        <table id="tempTable">
-                            <tr>
-                                <td></td>
-                                <td>High</td>
-                                <td>Low</td>
-                                <td>Conditions</td>
-                            </tr>
-                            <tr ng-repeat="day in daily">
-                                <td>{{ day.dayname }}</td>
-                                <td style="color:red;">{{day.temperatureMax}}°</td>
-                                <td style="color:blue;">{{day.temperatureMin}}°</td>
-                                <td style="color:blue;">{{day.icon}}</td>
-                            </tr>
-                        </table>
+                    <table id="tempTable">
+                        <tr>
+                            <td></td>
+                            <td>High</td>
+                            <td>Low</td>
+                            <td>Conditions</td>
+                        </tr>
+                        <tr ng-repeat="day in daily">
+                            <td>{{ day.dayname }}</td>
+                            <td style="color:#EA4E53;">{{day.temperatureMax}}°</td>
+                            <td style="color:#5290E9;">{{day.temperatureMin}}°</td>
+                            <td style="color:#71B37C;">{{day.icon}}</td>
+                        </tr>
+                    </table>
                 </li>
             </ul>
         </div>
