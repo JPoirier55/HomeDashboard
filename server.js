@@ -49,5 +49,5 @@ app.get('/api/v1/pins', function(req, res) {
 });
 
 app.use(express.static(__dirname + '/views'));
-app.listen(8080);
+app.listen(3000);
 

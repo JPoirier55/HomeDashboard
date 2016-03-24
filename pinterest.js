@@ -11,7 +11,7 @@ module.exports = {
 };
 
 function getPins(callback){
-    var pins = 'https://api.pinterest.com/v1/me/pins/?access_token=AfTb5bnYNUInzJ9ifMH_tPcQEIXWFDwc0BkCrVtC7-mQ6kAprAAAAAA&fields=id%2Clink%2Cnote%2Cimage';
+    var pins = 'https://api.pinterest.com/v1/me/pins/?access_token=&fields=id%2Clink%2Cnote%2Cimage';
     downloadFileSSL(pins, function(jsonStr){
         callback(JSON.parse(jsonStr));
     });
