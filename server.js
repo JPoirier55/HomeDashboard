@@ -9,15 +9,6 @@ var app = express();
 
 app.engine('html', cons.swig);
 
-app.get('/list_user', function (req, res) {
-   console.log("Got a GET request for /list_user");
-   res.render('index.html');
-});
-
-app.get('/ufc', function(req, res) {
-   res.render('index.html');
-});
-
 app.get('/api/v1/weather', function(req, res) {
     weather.getForecastIOWeather(function(callback){
         res.json(callback);
